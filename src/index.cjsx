@@ -4,7 +4,7 @@ objectAssign = require 'object-assign'
 module.exports = (icons) ->
   React.createClass
     propTypes:
-      onClick React.PropTypes.func
+      onClick: React.PropTypes.func
       icon: React.PropTypes.string.isRequired
       size: React.PropTypes.oneOfType([
         React.PropTypes.string,

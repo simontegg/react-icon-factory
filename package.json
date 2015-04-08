@@ -14,6 +14,7 @@
     "cjsx-loader": "^2.0.1",
     "coffee-loader": "^0.7.2",
     "coffee-react": "^3.0.1",
+    "coffee-reactify": "^3.0.0",
     "coffee-script": "^1.9.1",
     "css-loader": "^0.9.1",
     "gulp": "^3.8.11",
@@ -54,6 +55,7 @@
   "scripts": {
     "test": "node_modules/.bin/coffeelint test/* & NODE_ENV=test node_modules/.bin/mocha --recursive --compilers coffee:coffee-script/register -R mocha-unfunk-reporter",
     "test-watch": "NODE_ENV=test node_modules/.bin/mocha -w --recursive --compilers coffee:coffee-script/register -R mocha-unfunk-reporter",
-    "watch": "./node_modules/.bin/webpack-dev-server --hot"
+    "watch": "./node_modules/.bin/webpack-dev-server --hot",
+    "build": "cjsx -cb -o dist/ src/index.cjsx"
   }
 }
