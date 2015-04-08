@@ -4,6 +4,7 @@ objectAssign = require 'object-assign'
 module.exports = (icons) ->
   React.createClass
     propTypes:
+      onClick React.PropTypes.func
       icon: React.PropTypes.string.isRequired
       size: React.PropTypes.oneOfType([
         React.PropTypes.string,
@@ -18,6 +19,8 @@ module.exports = (icons) ->
       }
 
     render: ->
+      onClick = this.props.onClick
+
       styles = {
         fill: "currentcolor"
         verticalAlign: "middle"
@@ -29,6 +32,7 @@ module.exports = (icons) ->
 
       return (
         <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" fit
+          onClick={onClick}
           style={objectAssign(
             styles,
             @props.style
